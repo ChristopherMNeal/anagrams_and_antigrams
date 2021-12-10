@@ -21,7 +21,10 @@ describe (Text) do
       expect(text.anagram_checker("CAT BCD")).to(eq("'BCD' is not a real word"))
     end
     it("returns 'anagram!' if the letters in a sentence are an anagram") do
-      expect(sentence.anagram_checker("Twelve plus (+) One")).to(eq("anagram!"))
+      expect(sentence.anagram_checker("Twelve, plus (+) One?")).to(eq("anagram!"))
+    end
+    it("returns 'neither an anagram nor an antigram! the two inputs have letters {letters in common} in common' if the text is not an anagram") do
+      expect(sentence.anagram_checker("Twelves, plusses (+) Ones?")).to(eq("neither an anagram nor an antigram! the two inputs have letters 'e, l, n, o, p, s, t, u, v, w' in common"))
     end
   end
 
@@ -55,12 +58,4 @@ describe (Text) do
       expect(text.array_intersection(["a", "c", "t", "t"], ["a", "b", "t"])).to(eq(["a", "t"]))
     end
   end
-
-  describe ("#array_difference") do
-    it("returns an empty array if the inputs have no letters unique to them") do
-      expect(text.array_difference(["a", "c", "t"], ["a", "c", "t"])).to(eq([]))
-    end
-    it("returns an array with letters unique to either input") do
-      expect(text.array_difference(["a", "c", "s", "t"], ["a", "c", "t", "t"])).to(eq(["s", "t"]))
-    end
 end
