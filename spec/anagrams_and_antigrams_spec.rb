@@ -26,6 +26,9 @@ describe (Text) do
     it("returns false if an inputted word has no vowel") do
       expect(text.word_checker("BCD")).to(eq(false))
     end
+    it("returns true if an inputted word has at least one vowel") do
+      expect(text.word_checker("CAB")).to(eq(true))
+    end
   end
 end
 
