@@ -10,11 +10,11 @@ describe (Text) do
     it("returns 'anagram!' if the text is an anagram") do
       expect(text.anagram_checker("act")).to(eq("anagram!"))
     end
+    it("returns 'anagram!' if the text is an anagram, despite differences in case") do
+      expect(text.anagram_checker("ACT")).to(eq("anagram!"))
+    end
   end
 end
-
-# Check if two words are anagrams. If they are, your method should return something like this: "These words are anagrams."
-# split("") sort() a=b
 
 # Account for the possibility that words might have different cases but should still be anagrams. For instance, "Tea" is still an anagram of "Eat".
 # add .downcase()
