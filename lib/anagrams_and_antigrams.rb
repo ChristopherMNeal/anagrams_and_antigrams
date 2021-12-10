@@ -2,7 +2,7 @@ require("pry")
 
 module Utility_Functions
   def word_checker(input)
-    words = input.split(" ")
+    words = input.gsub(/[^a-zA-Z ]/,'').split(" ")
     not_word = []
     words.each do |word|
       if (word.downcase.count 'aeiou') == 0
