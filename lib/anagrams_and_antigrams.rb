@@ -14,7 +14,7 @@ module Utility_Functions
   end
 
   def array_intersection(input1, input2)
-    []
+    input1 & input2
   end
 end
 

@@ -39,7 +39,7 @@ describe (Text) do
       expect(text.array_intersection(["a", "c", "t"], ["d", "g", "o"])).to(eq([]))
     end
     it("returns an array with the common elements of the two entered arrays") do
-      expect(text.array_intersection(["a", "c", "t"], ["a", "b", "t"])).to(eq(["a", "b"]))
+      expect(text.array_intersection(["a", "c", "t"], ["a", "b", "t"])).to(eq(["a", "t"]))
     end
   end
 end
