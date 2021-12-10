@@ -3,6 +3,7 @@ require("anagrams_and_antigrams")
 
 describe (Text) do
   text = Text.new("cat")
+  sentence = Text.new("Eleven plus (+) Two")
   describe ("#anagram_checker") do
     it("returns 'neither an anagram nor an antigram! the two inputs have letters {letters in common} in common' if the text is not an anagram") do
       expect(text.anagram_checker("tab")).to(eq("neither an anagram nor an antigram! the two inputs have letters 'a, t' in common"))
@@ -16,6 +17,12 @@ describe (Text) do
     it("returns ''BCD' is not a real word' when BCD is entered") do
       expect(text.anagram_checker("BCD")).to(eq("'BCD' is not a real word"))
     end
+    it("returns ''CAT BCD' is not a real word' when BCD is entered") do
+      expect(text.anagram_checker("CAT BCD")).to(eq("'BCD' is not a real word"))
+    end
+    # it("returns 'anagram!' if the letters in a sentence are an anagram") do
+    #   expect(sentence.anagram_checker("Twelve plus (+) One")).to(eq("anagram!"))
+    # end
   end
 
   describe ("#word_splitter") do
@@ -28,12 +35,12 @@ describe (Text) do
     end
   end
 
-  describe ("#word_checker?") do
-    it("returns false if an inputted word has no vowel") do
-      expect(text.word_checker?("BCD")).to(eq(false))
+  describe ("#word_checker") do
+    it("returns the incorrect word if an inputted word has no vowel") do
+      expect(text.word_checker("BCD")).to(eq(["BCD"]))
     end
-    it("returns true if an inputted word has at least one vowel") do
-      expect(text.word_checker?("CAB")).to(eq(true))
+    it("returns an empty string if an inputted word has at least one vowel") do
+      expect(text.word_checker("CAB")).to(eq([]))
     end
   end
 
