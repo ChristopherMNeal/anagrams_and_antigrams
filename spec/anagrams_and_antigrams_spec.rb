@@ -29,6 +29,9 @@ describe (Text) do
     it("returns '{input1} and {input2} are antigrams!' if the letters in the inputs are an antigram") do
       expect(text.anagram_checker("dog")).to(eq("'cat' and 'dog' are antigrams!"))
     end
+    it("returns '{input1} and {input2} are antigrams!' if the letters in the inputs are an antigram, even when one word has only a 'y' as a vowel") do
+      expect(text.anagram_checker("gym")).to(eq("'cat' and 'gym' are antigrams!"))
+    end
   end
 
   describe ("#word_splitter") do
