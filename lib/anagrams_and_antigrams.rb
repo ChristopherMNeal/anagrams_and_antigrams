@@ -36,7 +36,7 @@ class Text
       "'#{word_checker(@input1).join(", ")}' is not a real word"
     elsif word_checker(input2).length >= 1
       "'#{word_checker(input2).join(", ")}' is not a real word"
-    elsif (compared_array.length() == split1.length) && (compared_array.length() == split2.length)
+    elsif split1 == split2
       "anagram!"
     elsif (compared_array.length() == 0)
       "antigram!"
@@ -45,3 +45,4 @@ class Text
     end
   end
 end
+
