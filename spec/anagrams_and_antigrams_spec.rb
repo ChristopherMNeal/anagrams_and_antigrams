@@ -35,10 +35,6 @@ describe (Text) do
   end
 end
 
-
-# Add a rule to check if the inputs are words. Words can only be anagrams or anagrams if they are, in fact, actually words. (For instance, "pkmn" isn't an anagram of "kmpn" because "pkmn" isn't a real word.) A word must contain a vowel (a, i, e, o, u) or y. Otherwise it's not a word. If one of the inputs has no vowels, your method should return something like this: "You need to input actual words!" (You only need to write a rule for vowels.)
-# add split(" ") before other tests, add function to spit("") and use some kind of includes method with ["a", "e", "i", "o", "u"]
-
 # If phrases aren't anagrams, the method should check whether they are actually "antigrams." For our purposes, a word is an "antigram" of another word if no letters match. For example, "hi" has no matches with "bye". The method should return something like this if there are no letter matches: "These words have no letter matches and are antigrams."
 # need some way to compare the two strings. after split.sort maybe remove any common letters?
 
