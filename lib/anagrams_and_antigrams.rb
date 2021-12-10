@@ -1,11 +1,19 @@
 require("pry")
 
-class Text
-  def initialize(input1)
-    @input1 = input1
-  end
+module Utility_Functions
+  # def word_checker(input)
+
+  # end
   def word_splitter(input)
     input.downcase().split('').sort() 
+  end
+end
+
+class Text
+  include Utility_Functions
+  
+  def initialize(input1)
+    @input1 = input1
   end
   def anagram_checker(input2)
     if word_splitter(@input1) == word_splitter(input2)

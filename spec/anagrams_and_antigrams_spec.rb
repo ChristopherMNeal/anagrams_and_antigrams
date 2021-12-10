@@ -14,12 +14,33 @@ describe (Text) do
       expect(text.anagram_checker("ACT")).to(eq("anagram!"))
     end
   end
+
   describe ("#word_splitter") do
     it("returns an inputted word downcased, split into an array, and sorted alphabetically") do
-      expect(text.word_splitter("CAT")).to(eq(["a", "c", "t"]))
+      expect(word_splitter("CAT")).to(eq(["a", "c", "t"]))
     end
   end
+
+  # describe ("#word_checker") do
+  #   it("returns false if an inputted word has no vowel") do
+  #     expect(word_checker("BCD")).to(eq(false))
+  #   end
+  # end
 end
+
+# describe (Utility_Functions) do
+#   describe ("#word_splitter") do
+#     it("returns an inputted word downcased, split into an array, and sorted alphabetically") do
+#       expect(word_splitter("CAT")).to(eq(["a", "c", "t"]))
+#     end
+#   end
+#   # describe ("#word_checker") do
+#   #   it("returns false if an inputted word has no vowel") do
+#   #     expect(word_checker("BCD")).to(eq(false))
+#   #   end
+#   # end
+# end
+
 
 # Add a rule to check if the inputs are words. Words can only be anagrams or anagrams if they are, in fact, actually words. (For instance, "pkmn" isn't an anagram of "kmpn" because "pkmn" isn't a real word.) A word must contain a vowel (a, i, e, o, u) or y. Otherwise it's not a word. If one of the inputs has no vowels, your method should return something like this: "You need to input actual words!" (You only need to write a rule for vowels.)
 # add split(" ") before other tests, add function to spit("") and use some kind of includes method with ["a", "e", "i", "o", "u"]
