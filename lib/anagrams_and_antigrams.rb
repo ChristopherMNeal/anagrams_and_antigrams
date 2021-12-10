@@ -37,11 +37,11 @@ class Text
     elsif word_checker(input2).length >= 1
       "error! the following aren't real words: '#{word_checker(input2).join(", ")}'"
     elsif split1 == split2
-      "anagrams!"
+      "'#{@input1}' and '#{input2}' are anagrams!"
     elsif (compared_array.length() == 0)
-      "antigrams!"
+      "'#{@input1}' and '#{input2}' are antigrams!"
     else
-      "neither anagrams nor a antigrams! they have #{compared_array.length} letters in common: '#{compared_array.join(", ")}'"
+      "'#{@input1}' and '#{input2}' are neither anagrams nor a antigrams! they have #{compared_array.length} letters in common: '#{compared_array.join(", ")}'"
     end
   end
 end

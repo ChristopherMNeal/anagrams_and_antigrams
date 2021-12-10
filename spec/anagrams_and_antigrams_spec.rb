@@ -6,13 +6,13 @@ describe (Text) do
   sentence = Text.new("Eleven plus (+) Two")
   describe ("#anagram_checker") do
     it("returns 'neither an anagram nor an antigrams! the two inputs have letters {letters in common} in common' if the text is not an anagram") do
-      expect(text.anagram_checker("tab")).to(eq("neither anagrams nor a antigrams! they have 2 letters in common: 'a, t'"))
+      expect(text.anagram_checker("tab")).to(eq("'cat' and 'tab' are neither anagrams nor a antigrams! they have 2 letters in common: 'a, t'"))
     end
     it("returns 'anagrams!' if the text is an anagram") do
-      expect(text.anagram_checker("act")).to(eq("anagrams!"))
+      expect(text.anagram_checker("act")).to(eq("'cat' and 'act' are anagrams!"))
     end
     it("returns 'anagrams!' if the text is an anagram, despite differences in case") do
-      expect(text.anagram_checker("ACT")).to(eq("anagrams!"))
+      expect(text.anagram_checker("ACT")).to(eq("'cat' and 'ACT' are anagrams!"))
     end
     it("returns ''BCD' is not a real word' when BCD is entered") do
       expect(text.anagram_checker("BCD")).to(eq("error! the following aren't real words: 'BCD'"))
@@ -21,10 +21,10 @@ describe (Text) do
       expect(text.anagram_checker("CAT BCD THNG K?!")).to(eq("error! the following aren't real words: 'BCD, THNG, K'"))
     end
     it("returns 'anagrams!' if the letters in a sentence are an anagram") do
-      expect(sentence.anagram_checker("Twelve, plus (+) One?")).to(eq("anagrams!"))
+      expect(sentence.anagram_checker("Twelve, plus (+) One?")).to(eq("'Eleven plus (+) Two' and 'Twelve, plus (+) One?' are anagrams!"))
     end
     it("returns 'neither anagrams nor a antigrams! they have {number of letters} letters in common: '{letters in common}'") do
-      expect(sentence.anagram_checker("Twelves, plusses (+) Ones?")).to(eq("neither anagrams nor a antigrams! they have 10 letters in common: 'e, l, n, o, p, s, t, u, v, w'"))
+      expect(sentence.anagram_checker("Twelves, plusses (+) Ones?")).to(eq("'Eleven plus (+) Two' and 'Twelves, plusses (+) Ones?' are neither anagrams nor a antigrams! they have 10 letters in common: 'e, l, n, o, p, s, t, u, v, w'"))
     end
   end
 

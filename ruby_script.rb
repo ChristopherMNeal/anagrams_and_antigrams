@@ -12,6 +12,6 @@ while (input1 != 'quit' && input2 != 'quit')
   if input1 != 'quit'
     puts "\nenter the second word or phrase you'd like to check:"
     input2 = gets.chomp
-    puts "\n\n~~~#{input1} and #{input2} are #{text.anagram_checker(input2)}~~~\n\n"
+    puts "\n\n~~ #{text.anagram_checker(input2)} ~~\n\n"
   end
 end
