@@ -13,6 +13,9 @@ describe (Text) do
     it("returns 'anagram!' if the text is an anagram, despite differences in case") do
       expect(text.anagram_checker("ACT")).to(eq("anagram!"))
     end
+    it("returns ''BCD' is not a real word' when BCD is entered") do
+      expect(text.anagram_checker("BCD")).to(eq("'BCD' is not a real word"))
+    end
   end
 
   describe ("#word_splitter") do
@@ -22,12 +25,12 @@ describe (Text) do
     end
   end
 
-  describe ("#word_checker") do
+  describe ("#word_checker?") do
     it("returns false if an inputted word has no vowel") do
-      expect(text.word_checker("BCD")).to(eq(false))
+      expect(text.word_checker?("BCD")).to(eq(false))
     end
     it("returns true if an inputted word has at least one vowel") do
-      expect(text.word_checker("CAB")).to(eq(true))
+      expect(text.word_checker?("CAB")).to(eq(true))
     end
   end
 end
