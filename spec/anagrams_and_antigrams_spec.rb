@@ -38,6 +38,9 @@ describe (Text) do
     it("returns an empty array if the inputs have no letters in common") do
       expect(text.array_intersection(["a", "c", "t"], ["d", "g", "o"])).to(eq([]))
     end
+    it("returns an array with the common elements of the two entered arrays") do
+      expect(text.array_intersection(["a", "c", "t"], ["a", "b", "t"])).to(eq(["a", "b"]))
+    end
   end
 end
 
