@@ -21,9 +21,6 @@ describe (Text) do
   end
 end
 
-# Account for the possibility that words might have different cases but should still be anagrams. For instance, "Tea" is still an anagram of "Eat".
-# add .downcase()
-
 # Add a rule to check if the inputs are words. Words can only be anagrams or anagrams if they are, in fact, actually words. (For instance, "pkmn" isn't an anagram of "kmpn" because "pkmn" isn't a real word.) A word must contain a vowel (a, i, e, o, u) or y. Otherwise it's not a word. If one of the inputs has no vowels, your method should return something like this: "You need to input actual words!" (You only need to write a rule for vowels.)
 # add split(" ") before other tests, add function to spit("") and use some kind of includes method with ["a", "e", "i", "o", "u"]
 
