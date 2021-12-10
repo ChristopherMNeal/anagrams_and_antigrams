@@ -2,8 +2,8 @@ require("rspec")
 require("anagrams_and_antigrams")
 
 describe (Text) do
-  describe ("#anagram_checker") do
   text = Text.new("cat")
+  describe ("#anagram_checker") do
     it("returns 'not an anagram' if the text is not an anagram") do
       expect(text.anagram_checker("tab")).to(eq("not an anagram"))
     end
@@ -12,6 +12,11 @@ describe (Text) do
     end
     it("returns 'anagram!' if the text is an anagram, despite differences in case") do
       expect(text.anagram_checker("ACT")).to(eq("anagram!"))
+    end
+  end
+  describe ("#word_splitter") do
+    it("returns an inputted word downcased, split into an array, and sorted alphabetically") do
+      expect(text.word_splitter("CAT")).to(eq(["a", "c", "t"]))
     end
   end
 end

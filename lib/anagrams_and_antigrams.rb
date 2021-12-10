@@ -4,8 +4,10 @@ class Text
   def initialize(input1)
     @input1 = input1
   end
+  def word_splitter(input)
+  end
   def anagram_checker(input2)
-    if @input1.downcase().split("").sort() == input2.downcase().split("").sort()
+    if word_splitter(@input1) == word_splitter(input2)
       "anagram!"
     else
       "not an anagram"
