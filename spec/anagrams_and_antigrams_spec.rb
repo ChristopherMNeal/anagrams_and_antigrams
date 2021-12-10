@@ -4,8 +4,8 @@ require("anagrams_and_antigrams")
 describe (Text) do
   text = Text.new("cat")
   describe ("#anagram_checker") do
-    it("returns 'not an anagram' if the text is not an anagram") do
-      expect(text.anagram_checker("tab")).to(eq("not an anagram"))
+    it("returns 'neither an anagram nor an antigram! the two inputs have letters {letters in common} in common' if the text is not an anagram") do
+      expect(text.anagram_checker("tab")).to(eq("neither an anagram nor an antigram! the two inputs have letters 'a, t' in common"))
     end
     it("returns 'anagram!' if the text is an anagram") do
       expect(text.anagram_checker("act")).to(eq("anagram!"))
