@@ -2,7 +2,11 @@ require("pry")
 
 module Utility_Functions
   def word_checker(input)
-    false
+    if (input.downcase.count 'aeiou') >= 1
+      true
+    else
+      false
+    end
   end
   def word_splitter(input)
     input.downcase().split('').sort() 
