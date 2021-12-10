@@ -1,8 +1,14 @@
 require("rspec")
 require("anagrams_and_antigrams")
 
-
-
+describe (Text) do
+  describe ("#anagram_checker") do
+  text = Text.new("cat")
+    it("returns 'not an anagram' if the text is not an anagram") do
+      expect(text.anagram_checker("tab")).to(eq("not an anagram"))
+    end
+  end
+end
 
 # Check if two words are anagrams. If they are, your method should return something like this: "These words are anagrams."
 # split("") sort() a=b
