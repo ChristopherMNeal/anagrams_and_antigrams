@@ -23,6 +23,9 @@ describe (Text) do
     it("returns an inputted word downcased, split into an array, and sorted alphabetically") do
       expect(text.word_splitter("CAT")).to(eq(["a", "c", "t"]))
     end
+    it("returns an inputted sentence downcased, with puncuation and spaces removed, split into an array, and sorted alphabetically") do
+      expect(text.word_splitter("CA T!")).to(eq(["a", "c", "t"]))
+    end
   end
 
   describe ("#word_checker?") do

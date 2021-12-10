@@ -13,8 +13,7 @@ module Utility_Functions
   end
 
   def word_splitter(input)
-    input.downcase().split('').sort()
-    # .gsub(/[^a-z0-9]/,'')
+    input.downcase().gsub(/[^a-z0-9]/,'').split('').sort()
   end
 
   def array_intersection(input1, input2)
