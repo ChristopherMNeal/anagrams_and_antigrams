@@ -16,8 +16,9 @@ describe (Text) do
   end
 
   describe ("#word_splitter") do
+    text = Text.new("cat")
     it("returns an inputted word downcased, split into an array, and sorted alphabetically") do
-      expect(word_splitter("CAT")).to(eq(["a", "c", "t"]))
+      expect(text.word_splitter("CAT")).to(eq(["a", "c", "t"]))
     end
   end
 
