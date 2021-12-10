@@ -33,15 +33,15 @@ class Text
     split2 = word_splitter(input2)
     compared_array = array_intersection(split1, split2)
     if word_checker(@input1).length >= 1
-      "'#{word_checker(@input1).join(", ")}' is not a real word"
+      "'error! the following aren't real words: #{word_checker(@input1).join(", ")}'"
     elsif word_checker(input2).length >= 1
-      "'#{word_checker(input2).join(", ")}' is not a real word"
+      "error! the following aren't real words: '#{word_checker(input2).join(", ")}'"
     elsif split1 == split2
       "anagram!"
     elsif (compared_array.length() == 0)
       "antigram!"
     else
-      "neither an anagram nor an antigram! the two inputs have letters '#{compared_array.join(", ")}' in common"
+      "neither an anagram nor an antigram! the two inputs have #{compared_array.length} letters: '#{compared_array.join(", ")}' in common"
     end
   end
 end
