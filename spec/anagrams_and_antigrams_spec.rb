@@ -7,6 +7,9 @@ describe (Text) do
     it("returns 'not an anagram' if the text is not an anagram") do
       expect(text.anagram_checker("tab")).to(eq("not an anagram"))
     end
+    it("returns 'anagram!' if the text is an anagram") do
+      expect(text.anagram_checker("act")).to(eq("anagram!"))
+    end
   end
 end
 
