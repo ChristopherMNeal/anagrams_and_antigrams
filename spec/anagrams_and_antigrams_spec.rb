@@ -20,9 +20,9 @@ describe (Text) do
     it("returns ''CAT BCD' is not a real word' when BCD is entered") do
       expect(text.anagram_checker("CAT BCD")).to(eq("'BCD' is not a real word"))
     end
-    # it("returns 'anagram!' if the letters in a sentence are an anagram") do
-    #   expect(sentence.anagram_checker("Twelve plus (+) One")).to(eq("anagram!"))
-    # end
+    it("returns 'anagram!' if the letters in a sentence are an anagram") do
+      expect(sentence.anagram_checker("Twelve plus (+) One")).to(eq("anagram!"))
+    end
   end
 
   describe ("#word_splitter") do
@@ -56,6 +56,3 @@ describe (Text) do
     end
   end
 end
-
-# Account for two sentences being compared as anagrams or "antigrams." Spaces and punctuation shouldn't count (so they should be removed). You'll need to make sure that each word in both inputted sentences is really a word (passing condition # 3 above). You may want to use a regular expression to remove additional characters. For example the sentence "The Morse Code" is an anagram of "Here come dots!"
-# multiple words should be accounted for with split(" ") before the other tests... add an each loop? and then add RegEx to remove spaces and punctuation like we did in the palindrome test.
