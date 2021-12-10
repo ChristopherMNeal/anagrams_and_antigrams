@@ -1,9 +1,9 @@
 require("pry")
 
 module Utility_Functions
-  # def word_checker(input)
-
-  # end
+  def word_checker(input)
+    input
+  end
   def word_splitter(input)
     input.downcase().split('').sort() 
   end
