@@ -1,14 +1,21 @@
 require("pry")
+require ("dictionary_lookup")
 
 module Utility_Functions
   def word_checker(input)
     words = input.gsub(/[^a-zA-Z ]/,'').split(" ")
     not_word = []
-    common_y_words = ["by", "cry", "dry", "drys", "fly", "fry", "glyph", "glyphs", "gym", "gyms", "hymn", "lymph", "lymphs", "lynx", "myth", "myths", "nymph", "nymphs", "ply", "pry", "rhythm", "rhythms", "shy", "sky", "sly", "say", "spry", "spy", "sty", "stymy", "sync", "syncs", "try", "why", "whys", "wry"]
     words.each do |word|
-      if (!common_y_words.index(word)) && (word.downcase.count 'aeiou') == 0
+      results = DictionaryLookup::Base.define(word)
+
+      if results == []
         not_word.push(word)
       end
+    # common_y_words = ["by", "cry", "dry", "drys", "fly", "fry", "glyph", "glyphs", "gym", "gyms", "hymn", "lymph", "lymphs", "lynx", "myth", "myths", "nymph", "nymphs", "ply", "pry", "rhythm", "rhythms", "shy", "sky", "sly", "say", "spry", "spy", "sty", "stymy", "sync", "syncs", "try", "why", "whys", "wry"]
+    # words.each do |word|
+    #   if (!common_y_words.index(word)) && (word.downcase.count 'aeiou') == 0
+    #     not_word.push(word)
+    #   end
     end
     not_word
   end

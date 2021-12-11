@@ -18,13 +18,13 @@ describe (Text) do
       expect(text.anagram_checker("BCD")).to(eq("error! the following aren't real words: 'BCD'"))
     end
     it("returns ''CAT BCD' is not a real word' when BCD is entered") do
-      expect(text.anagram_checker("CAT BCD THNG K?!")).to(eq("error! the following aren't real words: 'BCD, THNG, K'"))
+      expect(text.anagram_checker("CAT BCD THNG?!")).to(eq("error! the following aren't real words: 'BCD, THNG'"))
     end
     it("returns '{input1} and {input2} are anagrams!' if the letters in a sentence are an anagram") do
       expect(sentence.anagram_checker("Twelve, plus (+) One?")).to(eq("'Eleven plus (+) Two' and 'Twelve, plus (+) One?' are anagrams!"))
     end
     it("returns '{input1} and {input2} are neither anagrams nor a antigrams! they have {number of letters} letters in common: '{letters in common}'") do
-      expect(sentence.anagram_checker("Twelves, plusses (+) Ones?")).to(eq("'Eleven plus (+) Two' and 'Twelves, plusses (+) Ones?' are neither anagrams nor a antigrams! they have 10 letters in common: 'e, l, n, o, p, s, t, u, v, w'"))
+      expect(sentence.anagram_checker("Two elves, plus (+) One?")).to(eq("'Eleven plus (+) Two' and 'Two elves, plus (+) One?' are neither anagrams nor a antigrams! they have 10 letters in common: 'e, l, n, o, p, s, t, u, v, w'"))
     end
     it("returns '{input1} and {input2} are antigrams!' if the letters in the inputs are an antigram") do
       expect(text.anagram_checker("dog")).to(eq("'cat' and 'dog' are antigrams!"))
