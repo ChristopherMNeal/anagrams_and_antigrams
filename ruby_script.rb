@@ -18,6 +18,15 @@ while (input1 != 'quit' && input2 != 'quit')
   if input1 != 'quit'
     puts "\nenter the second word or phrase you'd like to check:"
     input2 = gets.chomp
-    puts "\n\n~~ #{text.anagram_checker(input2, dictionary)} ~~\n\n"
+    result = text.anagram_checker(input2, dictionary)
+    if result == "neither anagrams nor antigrams"
+      puts "\n\n~~ #{result}! '#{text.input1}' and '#{text.input2}' have #{text.number_of_letters} letters in common: #{text.letters_in_common}. ~~\n\n"
+    elsif (result == "anagrams") || (result == "antigrams")
+      puts "\n\n~~ '#{text.input1}' and '#{text.input2}' are #{result}! ~~\n\n"
+    elsif result == "error"
+      puts "\n\n~~ #{result}! the following aren't real words: #{text.fake_words} ~~\n\n"
+    else
+      puts "\n\n~~ uh oh! something went wrong... ~~\n\n"
+    end
   end
 end
