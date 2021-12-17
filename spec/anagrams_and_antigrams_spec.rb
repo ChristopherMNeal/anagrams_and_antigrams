@@ -5,32 +5,40 @@ describe (Text) do
   text = Text.new("cat")
   sentence = Text.new("Eleven plus (+) Two")
   describe ("#anagram_checker") do
-    it("returns '{input1} and {input2} are neither an anagram nor an antigrams! the two inputs have letters {letters in common} in common' if the text is not an anagram") do
-      expect(text.anagram_checker("tab", false)).to(eq("'cat' and 'tab' are neither anagrams nor a antigrams! they have 2 letters in common: 'a, t'"))
+    it("returns 'neither anagrams nor an antigrams' if the text is not an anagram") do
+      expect(text.anagram_checker("tab", false)).to(eq("neither anagrams nor antigrams"))
+      expect(text.input1).to(eq("cat"))
+      expect(text.input2).to(eq("tab"))
+      expect(text.letters_in_common).to(eq("a, t"))
+      expect(text.number_of_letters).to(eq(2))
     end
-    it("returns '{input1} and {input2} are anagrams!' if the text is an anagram") do
-      expect(text.anagram_checker("act", false)).to(eq("'cat' and 'act' are anagrams!"))
+    it("returns 'anagrams' if the text is an anagram") do
+      expect(text.anagram_checker("act", false)).to(eq("anagrams"))
     end
-    it("returns '{input1} and {input2} are anagrams!' if the text is an anagram, despite differences in case") do
-      expect(text.anagram_checker("ACT", false)).to(eq("'cat' and 'ACT' are anagrams!"))
+    it("returns 'anagrams' if the text is an anagram, despite differences in case") do
+      expect(text.anagram_checker("ACT", false)).to(eq("anagrams"))
     end
-    it("returns ''BCD' is not a real word' when BCD is entered") do
-      expect(text.anagram_checker("BCD", false)).to(eq("error! the following aren't real words: 'BCD'"))
+    it("returns 'error' when BCD is entered") do
+      expect(text.anagram_checker("BCD", false)).to(eq("error"))
+      expect(text.fake_words).to(eq("BCD"))
     end
-    it("returns ''CAT BCD' is not a real word' when BCD is entered") do
-      expect(text.anagram_checker("CAT BCD THNG?!", false)).to(eq("error! the following aren't real words: 'BCD, THNG'"))
+    it("returns 'error' when 'CAT BCD, THNG' is entered") do
+      expect(text.anagram_checker("CAT BCD THNG?!", false)).to(eq("error"))
+      expect(text.fake_words).to(eq("BCD, THNG"))
     end
-    it("returns '{input1} and {input2} are anagrams!' if the letters in a sentence are an anagram") do
-      expect(sentence.anagram_checker("Twelve, plus (+) One?", false)).to(eq("'Eleven plus (+) Two' and 'Twelve, plus (+) One?' are anagrams!"))
+    it("returns 'anagrams' if the letters in a sentence are an anagram") do
+      expect(sentence.anagram_checker("Twelve, plus (+) One?", false)).to(eq("anagrams"))
     end
-    it("returns '{input1} and {input2} are neither anagrams nor a antigrams! they have {number of letters} letters in common: '{letters in common}'") do
-      expect(sentence.anagram_checker("Two elves, plus (+) One?", false)).to(eq("'Eleven plus (+) Two' and 'Two elves, plus (+) One?' are neither anagrams nor a antigrams! they have 10 letters in common: 'e, l, n, o, p, s, t, u, v, w'"))
+    it("returns 'neither anagrams nor a antigrams' when the sentences have several but not all letters in common") do
+      expect(sentence.anagram_checker("Two elves, plus (+) One?", false)).to(eq("neither anagrams nor antigrams"))
+      expect(sentence.number_of_letters).to(eq(10))
+      expect(sentence.letters_in_common).to(eq('e, l, n, o, p, s, t, u, v, w'))
     end
-    it("returns '{input1} and {input2} are antigrams!' if the letters in the inputs are an antigram") do
-      expect(text.anagram_checker("dog", false)).to(eq("'cat' and 'dog' are antigrams!"))
+    it("returns 'antigrams!' if the letters in the inputs are an antigram") do
+      expect(text.anagram_checker("dog", false)).to(eq("antigrams"))
     end
-    it("returns '{input1} and {input2} are antigrams!' if the letters in the inputs are an antigram, even when one word has only a 'y' as a vowel") do
-      expect(text.anagram_checker("gym", false)).to(eq("'cat' and 'gym' are antigrams!"))
+    it("returns 'antigrams' if the letters in the inputs are an antigram, even when one word has only a 'y' as a vowel") do
+      expect(text.anagram_checker("gym", false)).to(eq("antigrams"))
     end
   end
 
