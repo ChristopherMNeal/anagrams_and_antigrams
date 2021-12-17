@@ -2,7 +2,7 @@
 
 #### Created By _**Christopher Neal**_
 
-#### _An application to determine whether two words are anagrams of each other_
+#### _An application to determine whether two inputs are anagrams of each other._
 
 ## Technologies Used
 

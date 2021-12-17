@@ -34,7 +34,7 @@ describe (Text) do
       expect(sentence.number_of_letters).to(eq(10))
       expect(sentence.letters_in_common).to(eq('e, l, n, o, p, s, t, u, v, w'))
     end
-    it("returns 'antigrams!' if the letters in the inputs are an antigram") do
+    it("returns 'antigrams' if the letters in the inputs are an antigram") do
       expect(text.anagram_checker("dog", false)).to(eq("antigrams"))
     end
     it("returns 'antigrams' if the letters in the inputs are an antigram, even when one word has only a 'y' as a vowel") do

@@ -2,9 +2,6 @@ require("pry")
 require ("dictionary_lookup")
 
 module Utility_Functions
-  
-  # attr_accessor
-  # end
 
   def word_checker(input, dictionary)
     words = input.gsub(/[^a-zA-Z ]/,'').split(" ")
@@ -59,22 +56,17 @@ class Text
     if word_checker(@input1, dictionary).length >= 1
       @fake_words = word_checker(@input1, dictionary).join(", ")
       @result = "error"
-      # "'error! the following aren't real words: #{word_checker(@input1, dictionary).join(", ")}'"
     elsif word_checker(input2, dictionary).length >= 1
       @fake_words = word_checker(input2, dictionary).join(", ")
       @result = "error"
-      # "error! the following aren't real words: '#{word_checker(input2, dictionary).join(", ")}'"
     elsif split1 == split2
       @result = "anagrams"
-      # "'#{@input1}' and '#{input2}' are anagrams!"
     elsif (compared_array.length() == 0)
       @result = "antigrams"
-      # "'#{@input1}' and '#{input2}' are antigrams!"
     else
       @letters_in_common = compared_array.join(", ")
       @number_of_letters = compared_array.length
       @result = "neither anagrams nor antigrams"
-      # "'#{@input1}' and '#{input2}' are neither anagrams nor a antigrams! they have #{compared_array.length} letters in common: '#{compared_array.join(", ")}'"
     end
   end
 end
